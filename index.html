@@ -1,70 +1,28 @@
 <!DOCTYPE html>
-<html>
-        <head>
-                <title>Aras</title>
-                <link rel="stylesheet" href="index.css">
-                <link rel="shortcut icon" href="Resimler/Site_Logo.png" type="image/x-icon">
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        </head>
-        <body>
-                <div>
-                
-                </div>
-                <div id="Search-box" role="searchbox">
-                        <button id="Arama" onclick="googleSearch()"></button>
-                        <i id="Bosluk"></i>
-                        <div id="PlaceholderKapsayan"><input id="Placeholder" tabindex="0" aria-disabled="true" placeholder=" Web'de ara"></div>
-                </div>
-                <a href="https://www.youtube.com/"><button class="box" id="box-YouTube" >YouTube</button></a>
-                <a href="https://www.instagram.com/"><button class="box" id="box-İnstagram" >İnstagram</button></a>
-                <a href="https://web.whatsapp.com/"><button class="box" id="box-WhatsApp" >WhatsApp</button></a>
-                <a href="https://www.eba.gov.tr/"><button class="box" id="box-Eba" >Eba</button></a>
-                <a href="https://www.mehsatek.com/"><button class="box" id="box-Mehsatek" >Mehsatek</button></a>
-                <a href="https://chatgpt.com/"><button class="box" id="box-ChatGpt" >ChatGpt</button></a>
-                <a href="https://snapany.com/youtube"><button class="box" id="box-Snapany" >Snapany</button></a>
-                <a href="https://mail.google.com/"><button class="box" id="box-Gmail" >Gmail</button></a>
-                <a href="https://www.facebook.com/"><button class="box" id="box-FaceBook" >FaceBook</button></a>
-                <a href="https://coddy.tech/"><button class="box" id="box-Coddy" >Coddy</button></a>
-                <a href="http://127.0.0.1:5500/"><button class="box" id="box-IP">Editör</button></a>
-                
-                <!--    <a href="URL"><button class="box" id="box-UYGULAMA_İSMİ" >UYGULAMA_İSMİ</button></a>    -->
-
-        <script>
-
-        const input = document.getElementById("Placeholder");
-        function googleSearch() {
-                const query = input.value.trim();
-                if (query) {
-                        location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
-                }
-                else {
-                        alert("Lütfen Bir Kelime Veya Cümle Aratın !");
-                }
-        }
-
-        // Enter tuşuna basınca arama
-        input.addEventListener("keydown", (e) => {
-                if (e.key === "Enter") {
-                        googleSearch();
-                }
-        });
-        
-        </script>
-        <script type="text/javascript" src="https://www.effectivegatecpm.com/pi6rupsrb?key=1a58c7ccdbc4bfda9bd85c388139cc5f"></script>
-        <script type='text/javascript' src='//pl28013681.effectivegatecpm.com/9c/c9/9a/9cc99abd2235df27051a11b835b7ecdf.js'></script>
-        </body>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>NoteBook</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id="EminMisinBas">
+        <div id="EminMisin">
+            <div id="EminMisinYazı">Silmek İstediğinizden Emin Misiniz?</div>
+            <a href=""><button onclick="NotuSilEmin()">Evet</button></a>
+            <button onclick="EminMisinKapat()">Hayır</button>
+        </div>
+    </div>
+    <div class="UstBar">
+        <ul class="Elementler">
+            <li><button class="Element" onclick="EminMisin()">Notlarım</button></li>
+            <li><button class="Element" onclick="NotuSil()">Sil</button></li>
+            <li><button class="Element" onclick="NotuKaydet()">Kaydet</button></li>
+        </ul>
+    </div>
+    <div><textarea placeholder="Notum..."></textarea></div>
+    <script type='text/javascript' src='//pl27975631.effectivegatecpm.com/16/dc/5a/16dc5a774e1b212ac4660565b770e3ef.js'></script>
+</body>
 </html>
-
-
-<!--  Kullandıklarım
-
-
-
-
--->
-
-
-
-
-
