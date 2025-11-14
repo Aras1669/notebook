@@ -6,6 +6,47 @@
     <link rel="stylesheet" href="index.css">
     <title>NoteBook</title>
     <script src="index.js"></script>
+    <style>
+            
+        @keyframes YüklenmeArkaPlan {
+          0%{   background-position:0% 50%;}
+          50%{  background-position:100% 50%;}
+          100%{ background-position:0% 50%;}     }
+        
+        #YuklemeEkrani {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+          transition: opacity 0.25s ease;
+          background: linear-gradient(45deg, rgb(255 0 0), rgb(0 0 255));
+          background-size: 300% 300%;
+          animation: YüklenmeArkaPlan 1.75s ease-in-out infinite;     }
+        
+        @keyframes Yüklenme {
+          0% {    transform: rotate(0deg) scale(1);}
+          10% {   transform: rotate(72deg) scale(1.01);}
+          40% {   transform: rotate(288deg) scale(1.09);}
+          50% {   transform: rotate(360deg) scale(1.1);}
+          60% {   transform: rotate(432deg) scale(1.09);}
+          90% {   transform: rotate(648deg) scale(1.01);}
+          100% {  transform: rotate(720deg) scale(1);}     }
+        
+        #YuklemeEkrani .daire {
+          width: 100px;
+          height: 100px;
+          border: 10px solid #00000025;
+          border-top: 10px solid #cccccc;
+          border-radius: 50%;
+          animation: Yüklenme 1.75s linear infinite;     }
+        
+
+    </style>
 </head>
 <body>
     <div id="EminMisinBas">
@@ -46,5 +87,6 @@
     </script>
 </body>
 </html>
+
 
 
