@@ -23,6 +23,28 @@
         </ul>
     </div>
     <div><textarea placeholder="Notum..."></textarea></div>
+    <script>
+        window.addEventListener('load', () => {
+            const YuklemeEkrani = document.createElement('div');
+            YuklemeEkrani.id = 'YuklemeEkrani';
+            YuklemeEkrani.innerHTML = `<div class="daire"></div>`;
+            document.body.appendChild(YuklemeEkrani);
+
+            const baslangicZamani = Date.now();
+            const minSure = 2500;
+
+            const gizlePreloader = () => {
+            YuklemeEkrani.style.opacity = '0';
+                setTimeout(() => {
+                    YuklemeEkrani.remove();
+                }, 250);
+            };
+
+            const gecikme = Math.max(minSure - (Date.now() - baslangicZamani), 0);
+            setTimeout(gecikme ? () => { setTimeout(gizlePreloader, 0); } : gizlePreloader, gecikme);
+        });
+    </script>
 </body>
 </html>
+
 
