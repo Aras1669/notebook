@@ -3,90 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="ArasEditör.css">
     <title>NoteBook</title>
-    <script src="index.js"></script>
-    <style>
-            
-        @keyframes YüklenmeArkaPlan {
-          0%{   background-position:0% 50%;}
-          50%{  background-position:100% 50%;}
-          100%{ background-position:0% 50%;}     }
-        
-        #YuklemeEkrani {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 9999;
-          transition: opacity 0.25s ease;
-          background: linear-gradient(45deg, rgb(255 0 0), rgb(0 0 255));
-          background-size: 300% 300%;
-          animation: YüklenmeArkaPlan 1.75s ease-in-out infinite;     }
-        
-        @keyframes Yüklenme {
-          0% {    transform: rotate(0deg) scale(1);}
-          10% {   transform: rotate(72deg) scale(1.01);}
-          40% {   transform: rotate(288deg) scale(1.09);}
-          50% {   transform: rotate(360deg) scale(1.1);}
-          60% {   transform: rotate(432deg) scale(1.09);}
-          90% {   transform: rotate(648deg) scale(1.01);}
-          100% {  transform: rotate(720deg) scale(1);}     }
-        
-        #YuklemeEkrani .daire {
-          width: 100px;
-          height: 100px;
-          border: 10px solid #00000025;
-          border-top: 10px solid #cccccc;
-          border-radius: 50%;
-          animation: Yüklenme 1.75s linear infinite;     }
-        
-
-    </style>
+    <script src="ArasEditör.js"></script>
 </head>
 <body>
-    <div id="EminMisinBas">
+    <div id="EminMisinBas" style="display: none;">
         <div id="EminMisin">
-            <div id="EminMisinYazı">Silmek İstediğinizden Emin Misiniz?</div>
-            <a href=""><button onclick="NotuSilEmin()">Evet</button></a>
+            <div id="EminMisinYazı"></div>
+            <a href=""><button onclick="Evet()">Evet</button></a>
             <button onclick="EminMisinKapat()">Hayır</button>
+            <button onclick="NotuKaydetVeÇık()" id="KaydetVeÇık">Kaydet, Çık</button>
         </div>
     </div>
-    <div class="UstBar">
-        <ul class="Elementler">
-            <li><button class="Element" onclick="EminMisin()">Notlarım</button></li>
-            <li><button class="Element" onclick="NotuSil()">Sil</button></li>
-            <li><button class="Element" onclick="NotuKaydet()">Kaydet</button></li>
+    <div id="UstBar">
+        <ul id="Elementler">
+            <li><button class="Element" onclick="SayfayıYenile()" id="Element1"><div></div>Sayfayı Kapat</button></li>
+            <li><button class="Element" onclick="NotuSil()" id="Element2"><div></div>Sil</button></li>
+            <li><button class="Element" onclick="NotuKaydet()" id="Element3"><div></div>Kaydet</button></li>
         </ul>
     </div>
     <div><textarea placeholder="Notum..."></textarea></div>
-    <script>
-        window.addEventListener('load', () => {
-            const YuklemeEkrani = document.createElement('div');
-            YuklemeEkrani.id = 'YuklemeEkrani';
-            YuklemeEkrani.innerHTML = `<div class="daire"></div>`;
-            document.body.appendChild(YuklemeEkrani);
-
-            const baslangicZamani = Date.now();
-            const minSure = 2500;
-
-            const gizlePreloader = () => {
-            YuklemeEkrani.style.opacity = '0';
-                setTimeout(() => {
-                    YuklemeEkrani.remove();
-                }, 250);
-            };
-
-            const gecikme = Math.max(minSure - (Date.now() - baslangicZamani), 0);
-            setTimeout(gecikme ? () => { setTimeout(gizlePreloader, 0); } : gizlePreloader, gecikme);
-        });
-    </script>
 </body>
 </html>
-
-
-
