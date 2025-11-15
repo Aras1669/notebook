@@ -5,21 +5,20 @@
   user-select: none;
   box-sizing: border-box;     }
 
-.UstBar {
-  width: 100%;
+#UstBar {
+  width: 101%;
   height: 60px;
   background-color: rgb(200, 200, 200);     }
 
-.Elementler {
+#Elementler {
   display: flex;
   list-style: none;
-  gap: 10px;
-  margin-left: 20px;     }
+  gap: 10px;     }
 
 .Element {
   color: rgb(255, 225, 200);
   background-color: rgba(0, 0, 0, 0.5);
-  width: 200px;
+  max-width: 200px;
   height: 40px;
   border-radius: 10px;
   border-width: 0px;
@@ -35,20 +34,26 @@
   padding-bottom: 5px;
   align-items: center;     }
 
-.Elementler  li:first-child {
+#Elementler li:first-child {
+  margin-left: 25px;
   margin-right: auto;     }
 
-.Elementler :nth-child(2) {
-  margin-left: 25px;
-}
+#Element1 {
+  min-width: 140px;     }
 
-.Elementler li:last-child {
-  margin-right: 20px;     }
+#Element2 {
+  min-width: 90px;
+  margin-left: 20px;     }
+
+#Element3 {
+  min-width: 90px;
+  margin-right: 25px;     }
 
 .Element:hover {
   transition: 150ms;
-  transform: scale(0.975);
-  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(0.97);
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 1);
   color: white;     }
 
 .Element:focus {
@@ -59,7 +64,8 @@
 
 textarea {
   width: 90%;
-  height: 500px;
+  min-height: 250px;
+  max-height: 500px;
   padding: 15px;
   margin-left: 5%;
   margin-top: 20px;
@@ -69,7 +75,7 @@ textarea {
   line-height: 1.5;
   border-radius: 10px;
   border: 5px solid #ccc;
-  box-shadow: 0 4px 10px rgba(0,0,0,1);
+  box-shadow: 0 4px 10px black;
   resize: none;
   outline: none;
   background-color: #fff;
@@ -92,8 +98,7 @@ textarea::-webkit-scrollbar-track {
 #EminMisinBas {
   width: 0;
   height: 0;
-  display: none;
-}
+  display: none;     }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(1.05); }
@@ -115,12 +120,13 @@ textarea::-webkit-scrollbar-track {
   padding-top: 150px;     }
 
 #EminMisin button {
-  width: 100px;
+  width: 130px;
   height: 30px;
   margin-top: 75px;
   font-size: 20px;
   color: white;
   background-color: rgba(0, 0, 0, 1);
+  display: inline-block;
   border: none;
   border-radius: 10px;     }
 
@@ -128,3 +134,40 @@ textarea::-webkit-scrollbar-track {
   transition: 200ms;
   background-color: rgba(129, 108, 108, 1);
   transform: scale(0.975);     }
+
+@keyframes YüklenmeArkaPlan {
+  0%{   background-position:0% 50%;}
+  50%{  background-position:100% 50%;}
+  100%{ background-position:0% 50%;}     }
+
+#YuklemeEkrani {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.25s ease;
+  background: linear-gradient(45deg, rgb(255 0 0), rgb(0 0 255));
+  background-size: 300% 300%;
+  animation: YüklenmeArkaPlan 1.75s ease-in-out infinite;     }
+
+@keyframes YüklenmeDaire {
+  0% {    transform: rotate(0deg) scale(1);}
+  10% {   transform: rotate(72deg) scale(1.01);}
+  40% {   transform: rotate(288deg) scale(1.09);}
+  50% {   transform: rotate(360deg) scale(1.1);}
+  60% {   transform: rotate(432deg) scale(1.09);}
+  90% {   transform: rotate(648deg) scale(1.01);}
+  100% {  transform: rotate(720deg) scale(1);}     }
+
+#YuklemeEkrani .daire {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #00000025;
+  border-top: 10px solid #cccccc;
+  border-radius: 50%;
+  animation: YüklenmeDaire 1.75s linear infinite;     }
